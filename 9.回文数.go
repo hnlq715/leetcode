@@ -14,25 +14,16 @@ func isPalindrome(x int) bool {
 		return true
 	}
 
-	len := 0
-	for i:=x;i>0;i=i/10 {
-		len++
+	rs := 0
+	for i:=x ;i>0; i/=10 {
+		rs = rs*10 + i %10
 	}
 
-	for idx:=0; idx<(len+1)/2; idx++ {
-		fmt.Println(x%(10^idx), x/(10**(len-idx-1)), x,len-idx-1)
-		if x/10 == 0 {
-			return true
-		}
-
-		if x%10 != x/(10**(len-idx-1)) {
-			return false
-		}
-
-		x = (x%(10**(len-idx-1)))/10
+	if rs == x {
+		return true
 	}
 
-	return true
+	return false
 }
 // @lc code=end
 
