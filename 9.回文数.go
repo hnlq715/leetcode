@@ -19,11 +19,7 @@ func isPalindrome(x int) bool {
 		rs = rs*10 + i %10
 	}
 
-	if rs == x {
-		return true
-	}
-
-	return false
+	return rs == x
 }
 // @lc code=end
 
